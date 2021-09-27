@@ -58,15 +58,15 @@ function task4(){
 function task5(){
 	var bg = document.getElementById('bg');
 	var ctx = bg.getContext('2d');
-	setTrianglePath(ctx,200);
-	ctx.fillStyle=fillColor(0,0,200,0,"#FF0000","rgba(0,0,0,0)",ctx);
+	setTrianglePath(ctx,300);
+	ctx.fillStyle=fillColor(0,0,300,0,"#FF0000","rgba(0,0,0,0)",ctx);
 	ctx.fill(); 
 	var garyctx = bg.getContext('2d');
-	setTrianglePath(garyctx,200);
-	garyctx.fillStyle=fillColor(200,0,0,0,"#00ff00","rgba(0,0,0,0)",garyctx); 
+	setTrianglePath(garyctx,300);
+	garyctx.fillStyle=fillColor(300,0,0,0,"#00ff00","rgba(0,0,0,0)",garyctx); 
 	garyctx.fill();
-	setTrianglePath(garyctx,200);
-	garyctx.fillStyle=fillColor(0,0,0,200,"#0000ff","rgba(0,0,0,0)",garyctx); 
+	setTrianglePath(garyctx,300);
+	garyctx.fillStyle=fillColor(0,0,0,300,"#0000ff","rgba(0,0,0,0)",garyctx); 
 	garyctx.fill();
 	// 画等边三角形
 	function setTrianglePath(ctx,side){

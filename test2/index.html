@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>Sierpinski Gasket </title>
+    <!-- 2D显示 -->
+    <script id="vertex-shader-2d" type="x-shader/x-vertex">
+		attribute vec4 vPosition;
+		void main(){
+			gl_Position = vPosition;
+		}
+		</script>
+
+    <script id="fragment-shader-2d" type="x-shader/x-fragment">
+		precision mediump float;
+		void main(){
+			gl_FragColor = vec4( 1.0, 0.0, 0.0, 1.0 );
+		}
+		</script>
+    <!-- 3D显示 -->
+    <script id="vertex-shader-3d" type="x-shader/x-vertex">
+			attribute vec3 vPosition;
+			attribute vec3 vColor;
+			varying vec4 color;
+			void main(){
+				gl_Position = vec4(vPosition, 1.0);
+				color = vec4(vColor, 1.0);
+			}
+		</script>
+    <script id="fragment-shader-3d" type="x-shader/x-fragment">
+			precision mediump float;
+			varying vec4 color;
+			void main(){
+				gl_FragColor = color;
+			}
+		</script>
+    <!-- 相关库 -->
+    <script type="text/javascript" src="js/common/glMatrix.js"></script>
+    <script type="text/javascript" src="js/common/initShaders.js"></script>
+    <script type="text/javascript" src="js/common/webgl-utils.js"></script>
+    <script type="text/javascript" src="js/gasket-triangles.js"></script>
+</head>
+
+
+<body>
+    <h2>交互式多种Sierpinski Gasket图形的绘制</h2>
+    <button id="Default" type="button">恢复默认</button>
+    <canvas id="triangle-canvas" width="512" height="512" style="float: left;">你的浏览器不支持HTML5 canvas元素</canvas>
+
+    <h3>形状选择</h3>
+    平面:<input type="radio" name="shape" value="2d" checked="checked" />
+    立体:<input type="radio" name="shape" value="3d" />
+    线框：<input type="radio" name="shape" value="wire" />
+    <br><br>
+    <button id="selShape" type="button">确定</button>
+
+    <h3>旋转方式</h3>
+    不旋转:<input type="radio" name="switch" value="2d" checked="checked" />
+    整体旋转:<input type="radio" name="switch" value="3d" />
+    各点旋转：<input type="radio" name="switch" value="wire" />
+    <br><br>
+    <button id="selSwitch" type="button">确定</button>
+
+    <h3>旋转角度</h3>
+    选择旋转角度(0-360°)：<input type="range" id="rotate" min= "0" max="360" value="60"/>
+
+    <h3>细分次数</h3>
+    选择细分次数(0~7)：<input type="range" id="selNum" min= "0" max="7" value="4"/>
+
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+
+#nav {              /* 导航 */
+    width: 100%;
+    height: 43px;
+    padding: 20px 16px;
+    margin-top: 0px;
+    margin-left: 0px;
+    border-bottom: 1px solid #34373d
+}
+
+#content {          /* 内容 */
+    width: 100%;
+    height: 1000px;
+    background-color: #2d3035;
+}
+
+#left {              /* 内容左半区 */
+    width: 10%;
+    height: 99%;
+    background-color: #2d3035;
+    float: left;
+    border-bottom: 1px solid #34373d
+    
+}
+
+#right {            /* 内容右半区 */
+    width: 89%;
+    height: 99%;
+    float: right;
+    background-color: #22252a;
+}
+
+#footer {       /* 底部 */
+    width: 100%;
+    height: 30px;
+    background-color: #2d3035;
+    text-align: center;
+    color: #8a8d93;
+}
+
+#up {               /* 内容右半区上方标题 */
+    width: 100%;
+    height: 50px;
+    background-color: #2d3035;
+    border-left: 1px solid #34373d;
+    color: #8a8d93;
+    font-size: large;
+    font-family: 宋体;
+
+}
+
+#tableContent {             /* 画布区 */
+    width: 60%;
+    height: 80%;
+    background: #2d3035;
+    margin-left: 3%;
+    margin-top: 3%;
+    float: left;
+}
+
+#formContent {              /* 操作面板区 */
+    width: 35%;
+    height: 80%;
+    background-color: #2d3035;
+    margin-top: 3%;
+    margin-right: 1%;
+    float: right;
+    color: #a5a7ab;
+    font-family: 宋体;
+}
+
+#clear {
+    clear: both;
+}
+
+.tablelist {
+    text-align: center;
+    color: #8a8d93;
+    width: 100%;
+}
+
+.tablelink {
+    color: #2997ff;
+}
+
+.odd {
+    background-color: #26292d;
+}
+
+thead {
+    color: #a5a7ab;
+    font-family: 宋体;
+}
+
+.formlist { 
+    border: 1px;
+    border-radius: 1px;
+    color: #8a8d93;
+}
+#reSet{
+    border: 0;
+    border-radius: 4px;
+    width: 80px;
+    height: 35px;
+   
+    background-color: #db6574;
+    font-size: 14px;
+    color: snow;
+}

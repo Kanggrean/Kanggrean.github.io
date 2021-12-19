@@ -43,7 +43,7 @@ function main() {
   webglLessonsUI.setupSlider("#angle", {slide: updateAngle, max: 360});
   webglLessonsUI.setupSlider("#scaleX", {value: scale[0], slide: updateScale(0), min: -5, max: 5, step: 0.01, precision: 2});
   webglLessonsUI.setupSlider("#scaleY", {value: scale[1], slide: updateScale(1), min: -5, max: 5, step: 0.01, precision: 2});
-
+  webglLessonsUI.setupSlider("#runSpeed", {slide: run, max: 10});
   function updatePosition(index) {
     return function(event, ui) {
       translation[index] = ui.value;
@@ -55,6 +55,23 @@ function main() {
     var angleInDegrees = 360 - ui.value;
     angleInRadians = angleInDegrees * Math.PI / 180;
     drawScene();
+  }
+  
+  var fff = false;
+  function run(event, ui) {
+	  if (fff) {
+	  	return;
+	  }
+	var k = ui.value;k=k*10;
+	var j = 0;
+	for (let i = 0; i < 36000; i++) {
+			setTimeout(function() {
+				  var angleInDegrees = 360 - j++;
+				  angleInRadians = angleInDegrees * Math.PI / 180;
+				  drawScene();
+			}, k * i ); // 还是每秒执行一次，不是累加的
+	}
+	fff = true;
   }
 
   function updateScale(index) {

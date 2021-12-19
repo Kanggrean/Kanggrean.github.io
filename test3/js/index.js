@@ -57,21 +57,29 @@ function main() {
     drawScene();
   }
   
-  var fff = false;
+  var fff = 1;
+  var runrun;
   function run(event, ui) {
-	  if (fff) {
-	  	return;
-	  }
-	var k = ui.value;k=k*10;
-	var j = 0;
-	for (let i = 0; i < 36000; i++) {
-			setTimeout(function() {
-				  var angleInDegrees = 360 - j++;
-				  angleInRadians = angleInDegrees * Math.PI / 180;
-				  drawScene();
-			}, k * i ); // 还是每秒执行一次，不是累加的
+	if (fff == 1) {
+		clearTimeout(runrun);
+		var k = ui.value;k=10/k;
+		var j = 0;
+		console.log(k);
+		function runspeed(){
+			var angleInDegrees = 360 - j++;
+			console.log(angleInDegrees);
+			angleInRadians = angleInDegrees * Math.PI / 180;
+			drawScene();
+			runrun=setTimeout(function(){runspeed();},k); // 还是每秒执行一次，不是累加的
+			if (j==360) {
+				j=0;
+			}
+		}
+		runspeed();
+		fff = 0;
+	}else{
+		fff=1;
 	}
-	fff = true;
   }
 
   function updateScale(index) {

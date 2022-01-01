@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>three.js webgl - morph targets - horse</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+		<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="https://cdn.staticfile.org/foundation/5.5.3/js/foundation.min.js"></script>
+		<script src="https://cdn.staticfile.org/foundation/5.5.3/js/vendor/modernizr.js"></script>
+		<style>
+			body {
+				background-color: #f0f0f0;
+				color: #444;
+			}
+
+			.btn {
+				width: 100px;
+			}
+
+			#control {
+				position: absolute;
+				bottom: 50px;
+				right: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<div id="control">
+				<div class="row">调转马头：
+					<button type="button" class="btn btn-success" id="rotateLeft">左转</button>
+					<button type="button" class="btn btn-warning" id="rotateRight">右转</button>
+					<button type="button" class="btn btn-info" id="rotateStop">停止转向</button>
+				</div>
+				<div class="row">调转幅度：
+					<button type="button" class="btn btn-success" id="rotateSpeedUp">变大</button>
+					<button type="button" class="btn btn-warning" id="rotateSpeedDown">变小</button>
+					<button type="button" class="btn btn-info" id="rotateSpeedBack">复原</button>
+				</div>
+				<div class="row">奔跑速度：
+					<button type="button" class="btn btn-success" id="speedUp">加速</button>
+					<button type="button" class="btn btn-warning" id="speedDown">减速</button>
+					<button type="button" class="btn btn-info" id="speedBack">速度复位</button>
+				</div>
+				<div class="row">
+					--移动鼠标左键以改变背景视角--
+				</div>
+				<div class="row">	
+					--移动鼠标右键以改变模型视角--
+					<button type="button" class="btn btn-info" id="cameraBack">小马复位</button>
+				</div>
+				<div class="row">运动状态：
+					<button type="button" class="btn btn-success" id="start">启动</button>
+					<button type="button" class="btn btn-danger" id="stop">冻结</button>
+				</div>
+				<div class="row">
+					光源调节：<input type="color" id="lightColor" value="#ffffff" />
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="module" src="jsm/js.js"></script>
+</html>
